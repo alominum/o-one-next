@@ -40,6 +40,8 @@ function Navbar() {
   const { t } = useTranslation();
   const { language } = useLanguage();
 
+  const logoSrc = resolvedTheme === 'dark' ? '/logo-white.png' : '/logo-black.png';
+
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -69,7 +71,7 @@ function Navbar() {
           {/* Desktop Logo */}
           <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 2 }}>
             <Link href="/">
-              <Image src="/logo.svg" alt="O-One Logo" width={120} height={40} />
+              <Image src={logoSrc} alt="O-One Logo" width={80} height={80} priority />
             </Link>
           </Box>
 
@@ -120,7 +122,7 @@ function Navbar() {
           {/* Mobile Logo */}
           <Box sx={{ display: { xs: 'flex', md: 'none' }, flexGrow: 1 }}>
             <Link href="/">
-              <Image src="/logo.svg" alt="O-One Logo" width={120} height={40} />
+              <Image src={logoSrc} alt="O-One Logo" width={120} height={40} priority />
             </Link>
           </Box>
 
