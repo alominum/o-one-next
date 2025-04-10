@@ -1,36 +1,32 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { languages, defaultLanguage } from '@/config/i18n';
+import { createContext, useContext, useState, ReactNode } from 'react';
+import { languages, defaultLanguage, Language } from '@/config/i18n';
 
-type LanguageContextType = {
-  language: string;
-  setLanguage: (lang: string) => void;
-};
+interface LanguageContextType {
+  language: Language;
+  setLanguage: (lang: Language) => void;
+}
 
-const LanguageContext = createContext<LanguageContextType>({
-  language: defaultLanguage,
-  setLanguage: () => {},
-});
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const useLanguage = () => useContext(LanguageContext);
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  const [languageState, setLanguageState] = useState<Language>(defaultLanguage);
 
-export function LanguageProvider({ children, initialLanguage }: { children: React.ReactNode; initialLanguage: string }) {
-  const [language, setLanguageState] = useState(initialLanguage);
-
-  const setLanguage = (lang: string) => {
+  const setLanguage = (lang: Language) => {
     if (languages.includes(lang)) {
       setLanguageState(lang);
       document.cookie = `NEXT_LOCALE=${lang}; path=/; max-age=31536000`;
     }
   };
 
-  useEffect(() => {
-    const cookie = document.cookie.match(/NEXT_LOCALE=([^;]+)/)?.[1];
-    if (cookie && languages.includes(cookie)) {
-      setLanguageState(cookie);
-    }
-  }, []);
+  return <LanguageContext.Provider value={{ language: languageState, setLanguage }}>{children}</LanguageContext.Provider>;
+}
 
-  return <LanguageContext.Provider value={{ language, setLanguage }}>{children}</LanguageContext.Provider>;
+export function useLanguage() {
+  const context = useContext(LanguageContext);
+  if (context === undefined) {
+    throw new Error('useLanguage must be used within a LanguageProvider');
+  }
+  return context;
 }

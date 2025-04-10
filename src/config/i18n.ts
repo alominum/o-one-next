@@ -1,12 +1,12 @@
 export const languages = ['en', 'fr', 'es'] as const;
 export type Language = (typeof languages)[number];
-export const defaultLanguage: Language = 'en';
+export const defaultLanguage = 'en' as const;
 
-export const languageNames = {
+export const languageNames: Record<Language, string> = {
   en: 'English',
-  es: 'Español',
   fr: 'Français',
-};
+  es: 'Español',
+} as const;
 
 export const translations = {
   en: {

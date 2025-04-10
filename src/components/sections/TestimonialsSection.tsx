@@ -23,7 +23,7 @@ const testimonials = [
     position: 'Director',
     company: 'FutureScale',
     avatar: 'https://ui-avatars.com/api/?name=Emma+Davis&background=64B5F6&color=fff&size=160',
-    content: "O-One's cloud solutions have significantly improved our operational efficiency. They're true partners in our success.",
+    content: 'O-One&apos;s cloud solutions have significantly improved our operational efficiency. They&apos;re true partners in our success.',
   },
 ];
 
@@ -75,7 +75,7 @@ export default function TestimonialsSection() {
                     </Box>
                   </Stack>
                   <Typography variant="body1" align="center" sx={{ fontStyle: 'italic' }}>
-                    "{testimonial.content}"
+                    &ldquo;{testimonial.content}&rdquo;
                   </Typography>
                 </CardContent>
               </Card>

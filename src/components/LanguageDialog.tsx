@@ -2,7 +2,7 @@
 
 import { Dialog, DialogTitle, DialogContent, List, ListItem, ListItemButton, ListItemText, ListItemIcon, Paper } from '@mui/material';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { languages, languageNames } from '@/config/i18n';
+import { languages, languageNames, Language } from '@/config/i18n';
 import { useTranslation } from '@/hooks/useTranslation';
 
 interface LanguageDialogProps {
@@ -15,7 +15,7 @@ export default function LanguageDialog({ open, onClose, anchorEl }: LanguageDial
   const { language, setLanguage } = useLanguage();
   const { t } = useTranslation();
 
-  const handleLanguageChange = (newLanguage: string) => {
+  const handleLanguageChange = (newLanguage: Language) => {
     setLanguage(newLanguage);
     onClose();
   };
