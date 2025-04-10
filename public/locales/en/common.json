@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register",
+    "profile": "Profile",
+    "myAccount": "My Account",
+    "logout": "Logout",
+    "changeLanguage": "Change language",
+    "toggleTheme": "Toggle theme"
+  },
+  "hero": {
+    "title": "Let's Build Together",
+    "subtitle": "Transform your business with our technology solutions",
+    "cta": "Get Started"
+  },
+  "features": {
+    "title": "Why Choose Us",
+    "subtitle": "We deliver excellence in every project",
+    "ai": {
+      "title": "AI-Powered Solutions",
+      "description": "Leverage cutting-edge AI and machine learning to transform your business processes and decision-making."
+    },
+    "fast": {
+      "title": "Fast & Efficient",
+      "description": "Our solutions are optimized for performance and speed."
+    },
+    "secure": {
+      "title": "Secure by Design",
+      "description": "Security is built into every aspect of our solutions."
+    },
+    "quality": {
+      "title": "Quality Guaranteed",
+      "description": "We maintain the highest standards of quality and reliability."
+    },
+    "innovation": {
+      "title": "Innovation Driven",
+      "description": "Stay ahead with our continuous innovation in AI and technology solutions."
+    }
+  }
+}

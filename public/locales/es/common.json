@@ -1,0 +1,44 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "login": "Iniciar Sesión",
+    "register": "Registrarse",
+    "profile": "Perfil",
+    "myAccount": "Mi Cuenta",
+    "logout": "Cerrar Sesión",
+    "changeLanguage": "Cambiar idioma",
+    "toggleTheme": "Cambiar tema"
+  },
+  "hero": {
+    "title": "Construyamos Juntos",
+    "subtitle": "Transforma tu negocio con nuestras soluciones tecnológicas",
+    "cta": "Comenzar"
+  },
+  "features": {
+    "title": "¿Por Qué Elegirnos?",
+    "subtitle": "Entregamos excelencia en cada proyecto",
+    "ai": {
+      "title": "Soluciones con IA",
+      "description": "Aprovecha la IA y el aprendizaje automático de vanguardia para transformar tus procesos empresariales y la toma de decisiones."
+    },
+    "fast": {
+      "title": "Rápido y Eficiente",
+      "description": "Nuestras soluciones están optimizadas para el rendimiento y la velocidad."
+    },
+    "secure": {
+      "title": "Seguro por Diseño",
+      "description": "La seguridad está integrada en cada aspecto de nuestras soluciones."
+    },
+    "quality": {
+      "title": "Calidad Garantizada",
+      "description": "Mantenemos los más altos estándares de calidad y fiabilidad."
+    },
+    "innovation": {
+      "title": "Impulsados por la Innovación",
+      "description": "Mantente a la vanguardia con nuestra innovación continua en soluciones de IA y tecnología."
+    }
+  }
+}

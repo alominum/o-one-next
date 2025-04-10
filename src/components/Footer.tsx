@@ -1,84 +1,93 @@
-import Link from 'next/link';
+'use client';
+
 import { Box, Container, Grid, Typography, Link as MuiLink, IconButton } from '@mui/material';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Link from 'next/link';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import { useTranslation } from '@/hooks/useTranslation';
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <Box
       component="footer"
       sx={{
-        bgcolor: 'background.paper',
         py: 6,
+        bgcolor: 'background.paper',
         borderTop: 1,
         borderColor: 'divider',
       }}
     >
       <Container maxWidth="lg">
         <Grid container spacing={4}>
+          {/* About Section */}
           <Grid item xs={12} sm={4}>
             <Typography variant="h6" color="text.primary" gutterBottom>
-              O-One
+              {t('footer.about.title')}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Transforming businesses through innovative technology solutions.
+              {t('footer.about.description')}
             </Typography>
           </Grid>
+
+          {/* Quick Links Section */}
           <Grid item xs={12} sm={4}>
             <Typography variant="h6" color="text.primary" gutterBottom>
-              Quick Links
+              {t('footer.links.title')}
             </Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-              <MuiLink component={Link} href="/services" color="inherit" sx={{ mb: 1 }}>
-                Services
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+              <MuiLink component={Link} href="/services" color="text.secondary">
+                {t('footer.links.services')}
               </MuiLink>
-              <MuiLink component={Link} href="/about" color="inherit" sx={{ mb: 1 }}>
-                About Us
+              <MuiLink component={Link} href="/about" color="text.secondary">
+                {t('footer.links.about')}
               </MuiLink>
-              <MuiLink component={Link} href="/portfolio" color="inherit" sx={{ mb: 1 }}>
-                Portfolio
+              <MuiLink component={Link} href="/contact" color="text.secondary">
+                {t('footer.links.contact')}
               </MuiLink>
-              <MuiLink component={Link} href="/contact" color="inherit">
-                Contact
+              <MuiLink component={Link} href="/privacy" color="text.secondary">
+                {t('footer.links.privacy')}
+              </MuiLink>
+              <MuiLink component={Link} href="/terms" color="text.secondary">
+                {t('footer.links.terms')}
               </MuiLink>
             </Box>
           </Grid>
+
+          {/* Contact Section */}
           <Grid item xs={12} sm={4}>
             <Typography variant="h6" color="text.primary" gutterBottom>
-              Contact Us
+              {t('footer.contact.title')}
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-              Email: info@o-one.com
+              {t('footer.contact.address')}
             </Typography>
             <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
-              Phone: +1 (555) 123-4567
+              {t('footer.contact.phone')}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              Address: 123 Tech Street, Silicon Valley, CA
+              {t('footer.contact.email')}
             </Typography>
             <Box sx={{ mt: 2 }}>
-              <IconButton color="primary" aria-label="Facebook">
-                <FacebookIcon />
+              <IconButton color="inherit" href="https://github.com" target="_blank" rel="noopener">
+                <GitHubIcon />
               </IconButton>
-              <IconButton color="primary" aria-label="Twitter">
-                <TwitterIcon />
-              </IconButton>
-              <IconButton color="primary" aria-label="LinkedIn">
+              <IconButton color="inherit" href="https://linkedin.com" target="_blank" rel="noopener">
                 <LinkedInIcon />
               </IconButton>
-              <IconButton color="primary" aria-label="GitHub">
-                <GitHubIcon />
+              <IconButton color="inherit" href="https://twitter.com" target="_blank" rel="noopener">
+                <TwitterIcon />
               </IconButton>
             </Box>
           </Grid>
         </Grid>
-        <Box sx={{ mt: 4, pt: 4, borderTop: 1, borderColor: 'divider' }}>
-          <Typography variant="body2" color="text.secondary" align="center">
-            © {new Date().getFullYear()} O-One. All rights reserved.
-          </Typography>
-        </Box>
+
+        {/* Copyright */}
+        <Typography variant="body2" color="text.secondary" align="center" sx={{ mt: 4 }}>
+          {t('footer.copyright')}
+        </Typography>
       </Container>
     </Box>
   );
