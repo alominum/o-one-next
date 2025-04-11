@@ -122,7 +122,7 @@ function Navbar() {
           {/* Mobile Logo */}
           <Box sx={{ display: { xs: 'flex', md: 'none' }, flexGrow: 1 }}>
             <Link href="/">
-              <Image src={logoSrc} alt="O-One Logo" width={120} height={40} priority />
+              <Image src={logoSrc} alt="O-One Logo" width={60} height={60} priority />
             </Link>
           </Box>
 
